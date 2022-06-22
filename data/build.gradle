@@ -1,0 +1,41 @@
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+
+android {
+    compileSdkVersion(32)
+    buildToolsVersion("30.0.3")
+
+    defaultConfig {
+        minSdkVersion(21)
+        targetSdkVersion(32)
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main.java.srcDirs += "src/main/kotlin"
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.0")
+
+    implementation("androidx.core:core:1.8.0")
+    implementation("androidx.window:window:1.0.0")
+
+    implementation("io.ktor:ktor-server-cio:2.0.2")
+    implementation("io.ktor:ktor-server-default-headers:2.0.2")
+    implementation("io.ktor:ktor-server-status-pages:2.0.2")
+
+    implementation("com.github.iamironz:binaryprefs:1.0.1") //Migrating to datastore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("com.elvishew:xlog:1.11.0")
+}
