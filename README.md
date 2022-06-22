@@ -1,4 +1,4 @@
-# Modified so FireBase it not needed!
+# Modified so FireBase is not needed!
 
 ![](screenshots/about_image_full.png)
 # Screen Stream over HTTP
